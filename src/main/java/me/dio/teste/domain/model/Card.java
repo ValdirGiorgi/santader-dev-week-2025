@@ -3,9 +3,12 @@ package me.dio.teste.domain.model;
 import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+@Entity(name = "tb_card")
 
 public class Card {
 
@@ -13,7 +16,7 @@ public class Card {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String number;
-    @Column(precision = 2, scale = 13)
+    @Column(precision = 13, scale = 2)
     private BigDecimal limit;
 
     // Getters e Setters
@@ -28,7 +31,7 @@ public class Card {
     public BigDecimal getLimit() {
         return limit;
     }
-    @Column(precision = 2, scale = 13, name = "card_limit")
+    @Column(precision = 13, scale = 2, name = "card_limit")
     public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
