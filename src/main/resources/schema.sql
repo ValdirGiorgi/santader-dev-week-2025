@@ -11,7 +11,7 @@ CREATE TABLE tb_account (
     number VARCHAR(255),
     agency VARCHAR(255),
     balance DOUBLE,
-    limit DOUBLEt DOUBLE
+    account_limit DOUBLE
 );
 
 CREATE TABLE tb_card (

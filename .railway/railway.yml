@@ -1,0 +1,9 @@
+version: 2
+name: santander-dev-week-2025
+services:
+  spring-app:
+    buildCommand: ./gradlew bootJar
+    startCommand: java -jar build/libs/*.jar
+    env:
+      - SPRING_PROFILES_ACTIVE=prd
+      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0

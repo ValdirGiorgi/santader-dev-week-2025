@@ -31,7 +31,7 @@ dependencies {
 
 tasks.jar{
 	manifest {
-		attributes['Main-Class'] = 'me.dio.teste.santader_dev_week_2025'
+		attributes['Main-Class'] = 'me.dio.teste.santader_dev_week_2025.Application'
 	}
 }
 
