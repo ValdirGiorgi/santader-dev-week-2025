@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://turntable.proxy.rlwy.net:22961/railway
+    username: postgres
+    password: OyQYpOOhnMaMvHfclGSaftpSMUoJxLsq
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
