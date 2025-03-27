@@ -9,25 +9,36 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
-@Entity(name = "tb_user")
+@Entity
+@Table(name = "tb_user")
 public class User {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch=jakarta.persistence.FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = jakarta.persistence.FetchType.EAGER)
     private List<Feature> features;
-    @OneToMany(cascade=CascadeType.ALL, fetch=jakarta.persistence.FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = jakarta.persistence.FetchType.EAGER)
     private List<News> news;
 
     // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+    
+    // Adicionar setter para ID para permitir operações de merge quando necessário
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public String getName() {
         return name;
     }
