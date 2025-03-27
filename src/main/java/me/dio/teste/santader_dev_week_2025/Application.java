@@ -7,9 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.servers.Server;
+
 @SpringBootApplication(scanBasePackages = "me.dio.teste")
 @EntityScan("me.dio.teste.domain.model")
 @EnableJpaRepositories("me.dio.teste.domain.repository")
+@OpenAPIDefinition(servers = { @Server(url = "/", description = "Default Server URL") })
 public class Application {
 
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
